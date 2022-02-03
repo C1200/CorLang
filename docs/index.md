@@ -1,3 +1,7 @@
+---
+title: CorLang
+---
+
 ## Who?
 
 Me.
