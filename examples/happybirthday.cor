@@ -1,0 +1,6 @@
+func happybirthday(name, age) -> ("Happy Birthday To You\n" * 2) + "Happy Birthday To " + name + "\nHappy Birthday To You\n" + ("Hip, Hip! Hooray!\n" * age)
+
+var name = input("Name: ")
+var age = input_int("Age: ")
+
+print(happybirthday(name, age))
