@@ -59,6 +59,9 @@ class Lexer:
             elif self.currentChar == "^":
                 tokens.append(Token(TT_POWER, pos_start=self.pos))
                 self.advance()
+            elif self.currentChar == "%":
+                tokens.append(Token(TT_MODULO, pos_start=self.pos))
+                self.advance()
             elif self.currentChar == "(":
                 tokens.append(Token(TT_LPARENT, pos_start=self.pos))
                 self.advance()

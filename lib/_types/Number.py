@@ -37,6 +37,18 @@ class Number(Type):
             return Number(self.value ** other.value).set_ctx(self.ctx), None
         else:
             return None, Type.illegal_operation(self, other)
+    def modulo(self, other):
+        if isinstance(other, Number):
+            if (other.value == 0):
+                return None, RTError(
+                    other.pos_start,
+                    other.pos_end,
+                    "Division by zero",
+                    self.ctx
+                )
+            return Number(self.value % other.value).set_ctx(self.ctx), None
+        else:
+            return None, Type.illegal_operation(self, other)
     def compare_ee(self, other):
         if isinstance(other, Number):
             return Number(int(self.value == other.value)).set_ctx(self.ctx), None

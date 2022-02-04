@@ -4,6 +4,7 @@ TT_MINUS = "MINUS"           # '-'
 TT_MULTIP = "MULTIP"         # '*'
 TT_DIVIDE = "DIVIDE"         # '/'
 TT_POWER = "POWER"           # '^'
+TT_MODULO = "MODULO"         # '%'
 
 # Assignment Operator
 TT_EQ = "EQ"                 # '='

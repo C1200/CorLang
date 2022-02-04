@@ -4,7 +4,7 @@ import readline
 import sys
 from run import run
 
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
 args = sys.argv
 args.pop(0)

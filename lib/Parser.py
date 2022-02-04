@@ -156,7 +156,7 @@ class Parser:
         return self.power()
 
     def term(self):
-        return self.bin_op(self.factor, (TT_MULTIP, TT_DIVIDE))
+        return self.bin_op(self.factor, (TT_MULTIP, TT_DIVIDE, TT_MODULO))
 
     def comp_expr(self):
         res = ParseResult()

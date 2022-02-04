@@ -65,6 +65,8 @@ class Interpreter:
             result, error = left.divide(right)
         elif node.op_tok.type == TT_POWER:
             result, error = left.power(right)
+        elif node.op_tok.type == TT_MODULO:
+            result, error = left.modulo(right)
         elif node.op_tok.type == TT_EE:
             result, error = left.compare_ee(right)
         elif node.op_tok.type == TT_NE:

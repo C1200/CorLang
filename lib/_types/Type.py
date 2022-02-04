@@ -22,6 +22,8 @@ class Type:
         return None, self.illegal_operation(other)
     def power(self, other):
         return None, self.illegal_operation(other)
+    def modulo(self, other):
+        return None, self.illegal_operation(other)
     def compare_ee(self, other):
         return None, self.illegal_operation(other)
     def compare_ne(self, other):
