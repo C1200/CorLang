@@ -1,5 +1,5 @@
 <h1 align=center>
-    <img src="https://c1200.js.org/CorLang/logo.png" alt="CorLang logo" /><br />
+    <img src="https://c1200.js.org/CorLang/logo.png" width="100px" alt="CorLang logo" /><br />
     CorLang
 </h1>
 
