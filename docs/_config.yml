@@ -1,7 +1,8 @@
 title: CorLang
 description: ""
 baseurl: "/CorLang"
-url: "http://c1200.js.org"
+url: "https://c1200.js.org"
+logo: "https://c1200.js.org/CorLang/logo.png"
 theme: jekyll-theme-minimal
 collections:
   docs:
