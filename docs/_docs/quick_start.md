@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Quick Start
-description: ""
 order: 1
 ---
 
