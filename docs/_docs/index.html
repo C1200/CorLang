@@ -1,0 +1,12 @@
+---
+title: Documentation Index
+order: 0
+---
+
+<h2>Documentation Index</h2>
+
+<ul>
+{% for doc in site.docs | sort: "order" %}
+    <li><a href="{ doc.url | relative_url }">{ doc.title }</a></li>
+{% endfor %}
+</ul>

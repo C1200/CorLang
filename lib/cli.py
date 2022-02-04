@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import readline
 import sys
 from run import run
@@ -42,6 +40,6 @@ try:
         elif result and len(args) == 0:
             print(repr(result))
 except (EOFError, KeyboardInterrupt):
-    exit(0)
+    pass
 except FileNotFoundError:
     print(f"Can't find file '{args[0]}'")

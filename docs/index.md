@@ -25,4 +25,4 @@ Why not?
 
 ## How?
 
-Documentation is in the works
+[Look here](https://c1200.js.org/CorLang/docs)

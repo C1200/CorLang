@@ -1,3 +1,8 @@
 title: CorLang
 description: My Little Language
+baseurl: "/CorLang"
+url: "http://c1200.js.org"
 theme: jekyll-theme-cayman
+collections:
+  docs:
+    output: true
