@@ -33,4 +33,5 @@ TT_STRING = "STRING"         # any char wrapped in single or double quotes
 TT_IDENTIFIER = "IDENTIFIER" # any in A-Z, a-z, 0-9 and '_'
 TT_KEYWORD = "KEYWORD"       # 'var', etc.
 TT_COMMA = "COMMA"           # ','
+TT_NEWLINE = "NEWLINE"       # '\n'
 TT_EOF = "EOF"               # line end

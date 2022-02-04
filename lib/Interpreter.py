@@ -110,7 +110,7 @@ class Interpreter:
     def visit_IfNode(self, node, ctx):
         res = RTResult()
 
-        for condition, expr in node.cases:
+        for condition, expr, return_null in node.cases:
             condition_value = res.register(self.visit(condition, ctx))
             if res.error:
                 return res
@@ -119,15 +119,16 @@ class Interpreter:
                 expr_value = res.register(self.visit(expr, ctx))
                 if res.error:
                     return res
-                return res.success(expr_value)
+                return res.success(Number.null if return_null else expr_value)
 
         if node.else_case:
-            else_value = res.register(self.visit(node.else_case, ctx))
+            expr, return_null = node.else_case
+            else_value = res.register(self.visit(expr, ctx))
             if res.error:
                 return res
-            return res.success(else_value)
+            return res.success(Number.null if return_null else else_value)
 
-        return res.success(None)
+        return res.success(Number.null)
     def visit_WhileNode(self, node, ctx):
         res = RTResult()
         values = []
@@ -145,6 +146,7 @@ class Interpreter:
                 return res
 
         return res.success(
+            Number.null if node.return_null else
             List(values).set_ctx(ctx).set_pos(node.pos_start, node.pos_end)
         )
     def visit_ForNode(self, node, ctx):
@@ -182,6 +184,7 @@ class Interpreter:
                 return res
 
         return res.success(
+            Number.null if node.return_null else
             List(values).set_ctx(ctx).set_pos(node.pos_start, node.pos_end)
         )
     def visit_FuncDefNode(self, node, ctx):
@@ -190,7 +193,7 @@ class Interpreter:
         func_name = node.var_name_tok.value if node.var_name_tok else None
         expr = node.expr
         arg_names = [arg_name.value for arg_name in node.arg_name_toks]
-        func_value = Function(func_name, expr, arg_names).set_ctx(ctx).set_pos(node.pos_start, node.pos_end)
+        func_value = Function(func_name, expr, arg_names, node.return_null).set_ctx(ctx).set_pos(node.pos_start, node.pos_end)
 
         if node.var_name_tok:
             ctx.symbol_table.set(func_name, func_value)

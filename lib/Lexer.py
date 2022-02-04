@@ -13,7 +13,7 @@ KEYWORDS = [
     "not",  "if",    "then",
     "elif", "else",  "for",
     "to",   "while", "step",
-    "func", "exit"
+    "func", "exit",  "end"
 ]
 
 class Lexer:
@@ -33,7 +33,10 @@ class Lexer:
         tokens = []
 
         while self.currentChar != None:
-            if self.currentChar in " \t\n":
+            if self.currentChar in " \t":
+                self.advance()
+            elif self.currentChar in ";\n":
+                tokens.append(Token(TT_NEWLINE, pos_start=self.pos))
                 self.advance()
             elif self.currentChar in NUMERIC:
                 tokens.append(self.make_number())

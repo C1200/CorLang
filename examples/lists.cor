@@ -3,16 +3,16 @@ print("Initial list:")
 print(list)
 
 var list = list + "yet another string"
-print("Append:")
+print("\nAppend:")
 print(list)
 
 var list = list - 0
-print("Remove 0th:")
+print("\nRemove 0th:")
 print(list)
 
 var list = list <= ["more strings", "more and more"]
-print("Concat:")
+print("\nConcat:")
 print(list)
 
-print("Get 0th:")
+print("\nGet 0th:")
 print(list > 0)

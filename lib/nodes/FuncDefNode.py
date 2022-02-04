@@ -1,8 +1,9 @@
 class FuncDefNode:
-    def __init__(self, var_name_tok, arg_name_toks, expr):
+    def __init__(self, var_name_tok, arg_name_toks, expr, return_null):
         self.var_name_tok = var_name_tok
         self.arg_name_toks = arg_name_toks
         self.expr = expr
+        self.return_null = return_null
 
         if var_name_tok:
             self.pos_start = var_name_tok.pos_start
