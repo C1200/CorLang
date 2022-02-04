@@ -2,7 +2,7 @@ title: CorLang
 description: ""
 baseurl: "/CorLang"
 url: "http://c1200.js.org"
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 collections:
   docs:
     output: true
