@@ -9,8 +9,6 @@ title: Downloads
 {% for release in releases %}
 <h3>{{ release.name }}</h3>
 
-{{ release | inspect }}
-
 <table>
     <thead>
         <tr>
@@ -22,6 +20,16 @@ title: Downloads
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>Archives</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+                <a href="{{ release.zipball_url }}" target="_blank">.zip</a>
+                <a href="{{ release.tarball_url }}" target="_blank">.tar.gz</a>
+            </td>
+        </tr>
         {% for asset in release.assets %}
         <tr>
             <td>{{ asset.name }}</td>
