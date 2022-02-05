@@ -8,3 +8,5 @@ collections:
   docs:
     output: true
     sort_by: order
+plugins:
+ - jekyll-toc
