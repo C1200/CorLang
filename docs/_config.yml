@@ -10,3 +10,5 @@ collections:
     sort_by: order
 plugins:
  - jekyll-toc
+whitelist:
+ - jekyll-toc
