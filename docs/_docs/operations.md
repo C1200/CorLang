@@ -22,6 +22,25 @@ order: 3
 | >=  | Checks if one number is greater than or equal to another  |
 | and | Returns true if both numbers are truthy                   |
 | or  | Returns true if one or both numbers are truthy            |
-| not | Returns false if number if truthy, otherwise returns true |
+| not | Returns false if number is truthy, otherwise returns true |
 
-*This page is still in the works*
+## String Operations
+
+| Op  | Info                                                      |
+|-----|-----------------------------------------------------------|
+| +   | Concats two strings together                              |
+| *   | Repeats string a specified number of times                |
+| ==  | Checks if one string is equal to another                  |
+| !=  | Checks if one string is not equal to another              |
+| and | Returns true if both strings are truthy                   |
+| or  | Returns true if one or both strings are truthy            |
+| not | Returns false if string is truthy, otherwise returns true |
+
+## List Operations
+
+| Op  | Info                                                      |
+|-----|-----------------------------------------------------------|
+| +   | Appends an item to a list                                 |
+| -   | Removes an item at the specified index from the list      |
+| >   | Gets item from specified location                         |
+| <=  | Concats two lists together                                |
