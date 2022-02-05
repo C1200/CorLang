@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Functions
-order: 4
+order: 6
 ---
 
 ## Functions
