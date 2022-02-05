@@ -33,7 +33,7 @@ title: Downloads
         {% for asset in release.assets %}
         <tr>
             <td>{{ asset.name }}</td>
-            <td>{{ asset.size }}</td>
+            <td data-file-size>{{ asset.size }}</td>
             <td>{{ asset.created_at }}</td>
             <td>{{ asset.updated_at }}</td>
             <td><a href="{{ assets.browser_download_url }}" target="_blank">Download</a></td>
@@ -42,3 +42,16 @@ title: Downloads
     </tbody>
 </table>
 {% endfor %}
+
+<script>
+    function fileSizeToString(bytes) {
+        if (bytes < 1e3) return `${bytes} bytes`;
+        else if (bytes < 1e6) return `${(bytes / 1e3).toFixed(1)}KB`;
+        else if (bytes < 1e9) return `${(bytes / 1e6).toFixed(1)}MB`;
+        else if (bytes < 1e12) return `${(bytes / 1e9).toFixed(1)}GB`;
+    }
+
+    document.querySelectorAll("[data-file-size]").forEach(elem => {
+        elem.innerHTML = fileSizeToString(parseInt(elem.innerHTML));
+    });
+</script>
