@@ -9,6 +9,8 @@ title: Downloads
 {% for release in releases %}
 <h3>{{ release.name }}</h3>
 
+{{ release | inspect }}
+
 <table>
     <thead>
         <tr>
