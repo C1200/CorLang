@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
+    <style>
+      @keyframes meerkatPop {
+        0% { transform: translateY(120px); }
+        100% { transform: translateY(40px);  }
+      }
+      
+      html, body {
+        text-align: center;
+      }
+      
+      .hole .meerkat {
+        height: 100px;
+        transform: translateY(120px);
+        animation: meerkatPop 2s forwards;
+        animation-delay: 2s;
+      }
+      
+      .hole .foreground {
+        height: 120px;
+        background: white;
+        position: relative;
+        z-index: 10;
+      }
+      
+      .hole .foreground h1 {
+        font-size: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hole">
+      <img class="meerkat" src="404meerkat.png" alt="Meerkat" />
+      <div class="foreground">
+        <h1>
+          404
+        </h1>
+      </div>
+    </div>
+    
+    <p>
+      We dug deep but couldn't find what you were looking for.
+      <br />
+      <a href="{{ "/" | relative_url }}">Go home</a>
+    </p>
+    
+    <small>Meerkats by <a href="https://www.flaticon.com/authors/freepik">Freepik via Flaticon</a></small>
+  </body>
+</html>
