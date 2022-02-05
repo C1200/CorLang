@@ -1,0 +1,17 @@
+name: Rebuild Github Pages
+
+on:
+  schedule:
+    - cron:  '*/20 * * * *' # Runs every 20 minutes
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger GitHub pages rebuild
+        run: |
+          curl --fail --request POST \
+            --url https://api.github.com/repos/${{ github.repository }}/pages/builds \
+            --header "Authorization: Bearer $TOKEN"
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
