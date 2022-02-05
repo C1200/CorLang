@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Operations
 order: 3
 ---

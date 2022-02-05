@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: docs
 title: Quick Start
 order: 1
 ---
