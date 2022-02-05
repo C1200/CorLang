@@ -1,0 +1,34 @@
+---
+layout: default
+title: Downloads
+---
+
+<h2>Downloads</h2>
+
+{% assign releases = site.github.releases %}
+{% for release in releases %}
+<h3>{{ release.name }}</h3>
+
+<table>
+    <thead>
+        <tr>
+            <td>File</td>
+            <td>Size</td>
+            <td>Created at</td>
+            <td>Updated at</td>
+            <td>Link</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for asset in release.assets %}
+        <tr>
+            <td>{{ asset.name }}</td>
+            <td>{{ asset.size }}</td>
+            <td>{{ asset.created_at }}</td>
+            <td>{{ asset.updated_at }}</td>
+            <td><a href="{{ assets.browser_download_url }}" target="_blank">Download</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
