@@ -7,3 +7,4 @@ theme: jekyll-theme-minimal
 collections:
   docs:
     output: true
+    sort_by: order
