@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=320, initial-scale=1">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <style>
       @keyframes meerkatPop {
         0% { transform: translateY(120px); }
@@ -35,7 +35,7 @@
   </head>
   <body>
     <div class="hole">
-      <img class="meerkat" src="404meerkat.png" alt="Meerkat" />
+      <img class="meerkat" src="{{ "/404meerkat.png" | relative_url }}" alt="Meerkat" />
       <div class="foreground">
         <h1>
           404
