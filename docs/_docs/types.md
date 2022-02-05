@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Types
-order: 4
+order: 3
 ---
 
 ## Types

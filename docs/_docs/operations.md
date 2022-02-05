@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Operations
-order: 3
+order: 4
 ---
 
 ## Number Operations

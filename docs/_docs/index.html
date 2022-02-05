@@ -6,9 +6,9 @@ order: 0
 
 <h2>Documentation Index</h2>
 
-<ul>
+<ol>
 {% assign docs = site.docs | sort: "order" %}
 {% for doc in docs %}
     <li><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a></li>
 {% endfor %}
-</ul>
+</ol>
