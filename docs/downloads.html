@@ -8,6 +8,7 @@ title: Downloads
 {% assign releases = site.github.releases %}
 {% for release in releases %}
 <h3>{{ release.name }}</h3>
+<a href="{{ release.html_url }}">View release on Github</a>
 
 <table>
     <thead>
@@ -36,7 +37,7 @@ title: Downloads
             <td data-file-size>{{ asset.size }}</td>
             <td>{{ asset.created_at | split: " " | first }}</td>
             <td>{{ asset.updated_at | split: " " | first }}</td>
-            <td><a href="{{ assets.browser_download_url }}" target="_blank">Download</a></td>
+            <td><a href="{{ asset.browser_download_url }}" target="_blank">Download</a></td>
         </tr>
         {% endfor %}
     </tbody>
