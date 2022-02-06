@@ -9,11 +9,12 @@ ALPHA = ascii_letters
 NUMERIC = "0123456789"
 ALPHANUMERIC = ALPHA + NUMERIC
 KEYWORDS = [
-    "var",  "and",   "or",
-    "not",  "if",    "then",
-    "elif", "else",  "for",
-    "to",   "while", "step",
-    "func", "exit",  "end"
+    "var",    "and",      "or",
+    "not",    "if",       "then",
+    "elif",   "else",     "for",
+    "to",     "while",    "step",
+    "func",   "exit",     "end",
+    "return", "continue", "break"
 ]
 
 class Lexer:
@@ -35,6 +36,8 @@ class Lexer:
         while self.currentChar != None:
             if self.currentChar in " \t":
                 self.advance()
+            elif self.currentChar == "#":
+                self.skip_comment()
             elif self.currentChar in ";\n":
                 tokens.append(Token(TT_NEWLINE, pos_start=self.pos))
                 self.advance()
@@ -206,3 +209,8 @@ class Lexer:
             self.advance()
 
         return Token(tok_type, pos_start=pos_start, pos_end=self.pos)
+    def skip_comment(self):
+        self.advance()
+        while self.currentChar != "\n":
+            self.advance()
+        self.advance()

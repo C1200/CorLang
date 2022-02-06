@@ -1,0 +1,5 @@
+# This is for the import.cor example
+
+func my_function_from_mymodule()
+    print("Hello from mymodule!")
+end

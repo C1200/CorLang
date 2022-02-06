@@ -6,7 +6,7 @@ class RTError(Error):
 		super().__init__(pos_start, pos_end, 'RTError', details)
 		self.ctx = ctx
 
-	def as_string(self):
+	def to_string(self):
 		result  = self.generate_traceback()
 		result += f"{self.name}: {self.details}\n\n"
 		result += string_with_arrows(self.pos_start.ftxt, self.pos_start, self.pos_end)

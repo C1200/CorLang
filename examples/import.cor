@@ -1,0 +1,2 @@
+import("mymodule.cor")
+my_function_from_mymodule()

@@ -33,7 +33,7 @@ class BaseFunction(Type):
     def check_and_populate_args(self, arg_names, args, ctx):
         res = RTResult()
         res.register(self.check_args(arg_names, args))
-        if res.error:
+        if res.should_return():
             return res
         self.populate_args(arg_names, args, ctx)
         return res.success(None)

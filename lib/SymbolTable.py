@@ -5,7 +5,7 @@ class SymbolTable:
     def get(self, name):
         value = self.symbols.get(name, None)
         if value == None and self.parent:
-            self.parent.get(name)
+            value = self.parent.get(name)
         return value
     def set(self, name, value):
         self.symbols[name] = value

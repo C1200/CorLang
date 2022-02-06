@@ -1,0 +1,13 @@
+var my_list = []
+
+for i = 0 to 10 then
+    if i == 4 then
+        continue # should skip adding 4 to list
+    elif i == 8 then
+        break # should skip 8 and anything following
+    else
+        var my_list = my_list + i
+    end
+end
+
+print(my_list)

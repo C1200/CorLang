@@ -1,0 +1,15 @@
+func list_join(list, sep)
+    var string = ""
+    if type(list) == "List" and type(sep) == "String" then
+        for i = 0 to len(list) then
+            var item = list > i
+            var string = string + item
+            if i != len(list) - 1 then
+                var string = string + sep
+            end
+        end
+        return string
+    else
+        throw("Argument a or b is not a string")
+    end
+end

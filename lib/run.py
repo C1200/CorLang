@@ -14,6 +14,9 @@ global_symbol_table.set("print", BuiltInFunction.print)
 global_symbol_table.set("input", BuiltInFunction.input)
 global_symbol_table.set("input_int", BuiltInFunction.input_int)
 global_symbol_table.set("type", BuiltInFunction.type)
+global_symbol_table.set("import", BuiltInFunction._import)
+global_symbol_table.set("len", BuiltInFunction.len)
+global_symbol_table.set("throw", BuiltInFunction.throw)
 
 def run(fn, text):
     lexer = Lexer(fn, text)
@@ -21,12 +24,15 @@ def run(fn, text):
     if error:
         return None, error
     
+    if len(tokens) == 1: # if only token is EOF
+        return None, None
+    
     parser = Parser(tokens)
     ast = parser.parse()
     if ast.error:
         return None, ast.error
     
-    interpreter = Interpreter()
+    interpreter = Interpreter(run)
     ctx = Context("<program>")
     ctx.symbol_table = global_symbol_table
     result = interpreter.visit(ast.node, ctx)
