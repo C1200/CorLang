@@ -38,7 +38,7 @@ Joins list items (must be a list of strings), separated by the separator string.
 list_join(["Eggs", "Bread", "Milk"], ", ") # Outputs: "Eggs, Bread, Milk"
 ```
 
-#### list_map(list, function)
+##### list_map(list, function)
 
 Returns a new list populated with the results of calling the supplied function on each
 element in the supplied list.
@@ -51,7 +51,7 @@ end
 list_map([1, 2, 3, 4], square) # Outputs: [1, 2, 9, 16]
 ```
 
-#### list_indexof(list, value)
+##### list_indexof(list, value)
 
 Finds the supplied value in the list. If the item is found, the index of the item is returned.
 Otherwise, -1 is returned.
