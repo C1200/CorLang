@@ -10,6 +10,35 @@ func list_join(list, sep)
         end
         return string
     else
-        throw("Argument a or b is not a string")
+        throw("Arguments are not of the correct type")
+    end
+end
+
+func list_map(list, map_func)
+    if type(list) == "List" and (type(map_func) == "Function" or type(map_func) == "BuiltInFunction") then
+        var new_list = []
+        for i = 0 to len(list) then
+            var item = list > i
+            var new_list = new_list + map_func(item, i)
+        end
+        return new_list
+    else
+        throw("Arguments are not of the correct type")
+    end
+end
+
+func list_indexof(list, value)
+    var idx = -1
+    if type(list) == "List" then
+        for i = 0 to len(list) then
+            var item = list > i
+            if item == value then
+                var idx = i
+                break
+            end
+        end
+        return idx
+    else
+        throw("Argument is not of the correct type")
     end
 end

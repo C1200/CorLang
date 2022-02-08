@@ -67,6 +67,13 @@ class BuiltInFunction(BaseFunction):
 
             if fn.startswith("std."):
                 fn = path.join(path.abspath(path.dirname(__main__.__file__)), "std", fn[4:] + ".cor")
+            elif fn.startswith("lib."):
+                return res.failure(RTError(
+                    self.pos_start,
+                    self.pos_end,
+                    "'lib.*' is reserved for future use.",
+                    ctx
+                ))
             
             try:
                 with open(fn, "r") as f:
@@ -85,7 +92,7 @@ class BuiltInFunction(BaseFunction):
                 return res.failure(RTError(
                     self.pos_start,
                     self.pos_end,
-                    f"Encountered error while loading \"{fn}\"" + error.to_string(),
+                    f"Encountered error while loading \"{fn}\"\n" + error.to_string(),
                     ctx
                 ))
 

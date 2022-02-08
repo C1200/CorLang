@@ -43,7 +43,7 @@ class Parser:
             return res.failure(SyntaxError(
                 self.currentToken.pos_start,
                 self.currentToken.pos_end,
-                "Expected '+', '-', '*', '/', '^', '==', '!=', '<', '>', <=', '>=', 'and' or 'or'"
+                "Token cannot appear after previous tokens"
             ))
         return res
 
@@ -593,7 +593,7 @@ class Parser:
             self.advance()
 
             if self.currentToken.type != TT_IDENTIFIER:
-                res.failure(
+                return res.failure(
                     SyntaxError(self.currentToken.pos_start,
                                 self.currentToken.pos_end,
                                 "Expected identifier"))
@@ -603,7 +603,7 @@ class Parser:
             self.advance()
 
             if self.currentToken.type != TT_EQ:
-                res.failure(
+                return res.failure(
                     SyntaxError(self.currentToken.pos_start,
                                 self.currentToken.pos_end, "Expected '='"))
 
@@ -611,7 +611,8 @@ class Parser:
             self.advance()
 
             expr = res.register(self.expr())
-            if res.error: return res
+            if res.error:
+                return res
             return res.success(VarAssignNode(var_name, expr))
         node = res.register(self.bin_op(self.comp_expr, ((TT_KEYWORD, "and"), (TT_KEYWORD, "or"))))
         if res.error:
@@ -750,5 +751,5 @@ class Parser:
 
         res.register_advance()
         self.advance()
-
+        
         return res.success(FuncDefNode(var_name_tok, arg_name_toks, statements, False))

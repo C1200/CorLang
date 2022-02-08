@@ -19,7 +19,7 @@ global_symbol_table.set("len", BuiltInFunction.len)
 global_symbol_table.set("throw", BuiltInFunction.throw)
 
 def run(fn, text):
-    lexer = Lexer(fn, text)
+    lexer = Lexer(fn, text + "\n")
     tokens, error = lexer.tokenize()
     if error:
         return None, error

@@ -2,7 +2,7 @@ import readline
 import sys
 from run import run
 
-VERSION = "0.0.4"
+VERSION = "0.0.5"
 
 args = sys.argv
 args.pop(0)
@@ -28,7 +28,7 @@ try:
         if text.strip() == "":
             continue
             
-        result, error = run(fn, text + "\n")
+        result, error = run(fn, text)
     
         if error:
             print(error.to_string())

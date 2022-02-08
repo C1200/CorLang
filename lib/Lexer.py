@@ -55,7 +55,6 @@ class Lexer:
                 self.advance()
             elif self.currentChar == "-":
                 tokens.append(self.make_minus())
-                self.advance()
             elif self.currentChar == "*":
                 tokens.append(Token(TT_MULTIP, pos_start=self.pos))
                 self.advance()
